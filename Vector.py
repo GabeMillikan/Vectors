@@ -1,5 +1,6 @@
 class Vector:
     x, y, z = 0, 0, 0;
+    formatString = "(%.2f, %.2f, %.2f)"
 
     # constructors
     def __init__(self, x = 0, y = 0, z = 0):
@@ -81,10 +82,15 @@ class Vector:
         self.z *= f
 
     # util
+    def setOutputPercision(self, decimalPlaces):
+        assert isinstance(decimalPlaces, int), "setOutputPercision takes an integer, the number of decimals to display when converting to string. -1 = all decimals"
+        if decimalPlaces < 0 or decimalPlaces > 16:
+            decimalPlaces = 16
+        self.formatString = "(%%.%df, %%.%df, %%.%df)" % (decimalPlaces, decimalPlaces, decimalPlaces)
+    
     def __str__(self):
-        return "(%.2f, %.2f, %.2f)" % (self.x, self.y, self.z)
+        return self.formatString % (self.x, self.y, self.z)
     
     def unit(self):
         length = self.length()
         return Vector(0.5773502691896258, 0.5773502691896258, 0.5773502691896258) if length == 0 else (Vector(self) if length == 1 else self.scale(1/length))
-
