@@ -1,5 +1,6 @@
 public class Vector
 {
+    private String formatString = "(%.2f, %.2f, %.2f)";
     public double x, y, z = 0;
 
     // constructors
@@ -149,15 +150,16 @@ public class Vector
     }
 
     // util
+    void setOutputPercision(int decimalPlaces)
+    {
+        if (decimalPlaces < 0 || decimalPlaces > 16)
+            decimalPlaces = 16;
+        this.formatString = String.format("(%%.%df, %%.%df, %%.%df)", decimalPlaces, decimalPlaces, decimalPlaces);
+    }
     @Override
     public String toString()
     {
-        return String.format("Vector (%.2f, %.2f, %.2f) @ %s", x, y, z, Integer.toHexString(hashCode()).toUpperCase());
-    }
-    String stringify()
-    {
-        
-        return String.format("(%.2f, %.2f, %.2f)", x, y, z);
+        return String.format(this.formatString, x, y, z);
     }
     Vector unit()
     {
