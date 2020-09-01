@@ -4,7 +4,7 @@ It gets tiring to re-code these or find them from old projects, so here they are
 
 (i will be adding python and c++ equivalents shortly)
 
-## seo:
+### SEO:
 3D Vector class for Java
 
 3D Vector class for Python
