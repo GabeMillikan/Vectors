@@ -94,4 +94,3 @@ class Vector:
     def unit(self):
         length = self.length()
         return Vector(0.5773502691896258, 0.5773502691896258, 0.5773502691896258) if length == 0 else (Vector(self) if length == 1 else self.scale(1/length))
-    
