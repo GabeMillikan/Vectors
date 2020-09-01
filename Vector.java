@@ -152,7 +152,6 @@ public class Vector
     @Override
     public String toString()
     {
-        
         return String.format("Vector (%.2f, %.2f, %.2f) @ %s", x, y, z, Integer.toHexString(hashCode()).toUpperCase());
     }
     String stringify()
