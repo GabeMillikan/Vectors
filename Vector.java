@@ -163,6 +163,6 @@ public class Vector
     {
         double length = this.length();
         // tfw you can't switch on a double
-        return length == 0.f ? new Vector(0, 0, 1) : length == 1.f ? new Vector(this) : this.scale(1 / length);
+        return length == 0.f ? new Vector(0.5773502691896258, 0.5773502691896258, 0.5773502691896258) : length == 1.f ? new Vector(this) : this.scale(1 / length);
     }
 }
